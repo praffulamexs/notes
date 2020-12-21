@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import AddNote from './components/addNote';
 import Note from './interfaces/note';
 import SingleNote from './components/note'
+import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -34,7 +35,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     gridList: {
       width: '100%',
-      padding: 5
+      paddingBottom: 80
+      // padding: 5
     },
     gridItem: {
       padding: '10px !important',
@@ -43,7 +45,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-const App: React.FC = () => {
+const App = (props: any) => {
   const classes = useStyles()
 
   // Notes
@@ -80,6 +82,13 @@ const App: React.FC = () => {
       setOpen(false)
   }
 
+  const getGridListCols = () => {
+    if (isWidthUp('sm', props.width)) {
+      return 1;
+    }
+    return 4;
+  }
+
   return (
     <Container className={classes.background} maxWidth='xl'>
 
@@ -90,7 +99,7 @@ const App: React.FC = () => {
       ) : (
         <GridList className={classes.gridList} cols={4}>
           {notes.map((note, index) => (
-            <GridListTile className={classes.gridItem} key={index} cols={1}>
+            <GridListTile className={classes.gridItem} key={index} cols={getGridListCols()}>
               <SingleNote note={note} removeNote={(note: Note) => removeNote(note)} />
             </GridListTile>
           ))}
@@ -113,4 +122,4 @@ const App: React.FC = () => {
   )
 }
 
-export default App
+export default withWidth()(App)

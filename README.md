@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Notes App
+
+The project is developed using React with TypeScript. The objective of this project is to allow a user to add notes. The user can add a title of the notes along with the content and can add colorful tags to it. At the moment this project does not have any back-end integration, so the data is not being saved anywhere.
+
+Following are the default scripts that can be found on the basic React boilerplate.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

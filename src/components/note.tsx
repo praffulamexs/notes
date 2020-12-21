@@ -1,5 +1,4 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, Chip, createStyles, IconButton, makeStyles, Theme, Typography } from '@material-ui/core'
-import { Close } from '@material-ui/icons'
 import React from 'react'
 import Note from '../interfaces/note'
 
@@ -80,10 +79,7 @@ const SingleNote: React.FC<NoteProps> = ({ note, removeNote }) => {
                 </CardContent>
             </CardActionArea>
             <CardActions className={classes.actions}>
-                <Button onClick={() => removeNote(note)} variant="contained" size="medium" color="secondary">Close</Button>
-                {/* <IconButton onClick={() => removeNote(note)} className={classes.actionButton} size="small" aria-label="delete note">
-                    <Close />
-                </IconButton> */}
+                <Button onClick={() => removeNote(note)} variant="contained" size="medium" color="secondary">Delete</Button>
             </CardActions>
         </Card>
     )
