@@ -4,6 +4,8 @@ The project is developed using React with TypeScript. The objective of this proj
 
 Following are the default scripts that can be found on the basic React boilerplate.
 
+The project can be seen on this URL - https://notes-10360.web.app/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
